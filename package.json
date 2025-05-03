@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^9.3.1",
+    "@splinetool/runtime": "^1.9.82",
+    "@storyblok/nuxt": "^6.2.3",
+    "@vimeo/player": "^2.26.0",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "gsap": "npm:@gsap/business@^3.12.7",
+    "masonry-layout": "^4.2.2",
+    "nuxt": "^3.15.4",
+    "sass": "^1.77.6",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  }
+}
