@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
   ],
   nitro: {
-    preset: "netlify",
+    preset: "static",
   },
   i18n: {
     strategy: "prefix_except_default",
