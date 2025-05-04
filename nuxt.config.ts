@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     ["@storyblok/nuxt", { accessToken: process.env.STORYBLOK_ACCESS_TOKEN }],
     "@nuxtjs/i18n",
   ],
+  nitro: {
+    preset: "netlify",
+  },
   i18n: {
     strategy: "prefix_except_default",
     locales: ["en", "fi"],
