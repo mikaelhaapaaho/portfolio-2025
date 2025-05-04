@@ -8,6 +8,10 @@ export default defineNuxtConfig({
   ],
   nitro: {
     preset: "static",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
   },
   i18n: {
     strategy: "prefix_except_default",
