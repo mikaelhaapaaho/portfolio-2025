@@ -14,7 +14,7 @@
     "@splinetool/runtime": "^1.9.82",
     "@storyblok/nuxt": "^6.2.3",
     "@vimeo/player": "^2.26.0",
-    "bootstrap": "^5.3.5",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "gsap": "^3.12.7",
     "masonry-layout": "^4.2.2",
