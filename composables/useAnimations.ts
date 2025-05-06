@@ -3,7 +3,7 @@ export const useAnimations = () => {
 
   const slideIn = (element: HTMLElement) => {
     gsap.from(element, {
-      duration: 1,
+      duration: 0.5,
       x: 100,
       autoAlpha: 0,
       ease: "power2.out",
@@ -20,7 +20,7 @@ export const useAnimations = () => {
 
     children.forEach((child, index) => {
       gsap.from(child, {
-        duration: 1,
+        duration: 0.5,
         scale: 0,
         ease: "power2.out",
         delay: index * 0.1,
