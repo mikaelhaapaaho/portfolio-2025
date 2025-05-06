@@ -6,13 +6,15 @@
       ref="canvas"
       @click="removeHint"
     />
-    <i
+    <span
+      class="position-absolute start-50 top-50 display-1"
       ref="hint"
-      class="position-absolute start-50 top-50 bi bi-hand-index-thumb text-light display-1"
       v-if="blok.hint"
-    ></i>
+    >
+      <i class="position-absolute bi bi-hand-index-thumb-fill text-light"></i>
+      <i class="position-absolute bi bi-hand-index-thumb text-danger"></i>
+    </span>
   </section>
-  <!-- <div class="border-top border-3 border-primary"></div> -->
 </template>
 
 <script setup>
@@ -44,20 +46,24 @@ const removeHint = () => {
 </script>
 
 <style scoped>
-i {
+span {
   pointer-events: none;
   animation: scaleAnimation 2s infinite ease-in-out;
 }
 
+.text-light {
+  transform: scale(0.95) translateY(2%);
+}
+
 @keyframes scaleAnimation {
   0% {
-    transform: translate(-50%, -50%) rotate(-20deg) scale(1);
+    transform: rotate(-20deg) scale(1);
   }
   50% {
-    transform: translate(-50%, -50%) rotate(-20deg) scale(1.2);
+    transform: rotate(-20deg) scale(1.2);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(-20deg) scale(1);
+    transform: rotate(-20deg) scale(1);
   }
 }
 
