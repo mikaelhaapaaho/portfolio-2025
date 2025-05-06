@@ -7,10 +7,11 @@ let { slug } = useRoute().params
 
 const { locale } = useI18n()
 const resolveRelations = ["popular-articles.articles"]
+const config = useRuntimeConfig()
 
 const url = slug && slug.length > 0 ? slug.join("/") : "home"
 
-const version = import.meta.env.STORYBLOK_VERSION || "draft"
+const version = config.public.storyblokVersion
 
 const story = await useAsyncStoryblok(
   url.replace(/\/$/, ""),
@@ -25,4 +26,6 @@ const story = await useAsyncStoryblok(
 )
 
 provide("locale", locale)
+
+console.log("Storyblok version:", version)
 </script>

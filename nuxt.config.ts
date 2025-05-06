@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     preset: "netlify",
   },
   devtools: { enabled: false },
+  runtimeConfig: {
+    public: {
+      storyblokVersion: process.env.STORYBLOK_VERSION || "draft",
+    },
+  },
   modules: [
     ["@storyblok/nuxt", { accessToken: process.env.STORYBLOK_ACCESS_TOKEN }],
     "@nuxtjs/i18n",
