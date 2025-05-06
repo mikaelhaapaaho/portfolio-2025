@@ -26,6 +26,4 @@ const story = await useAsyncStoryblok(
 )
 
 provide("locale", locale)
-
-console.log("Storyblok version:", version)
 </script>
