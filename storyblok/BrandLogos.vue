@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 bg-primary py-5">
+  <section id="brands" class="container-fluid bg-primary py-5">
     <div class="container">
       <div class="row row-cols-3 row-cols-lg-6" ref="logosContainer">
         <div
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
