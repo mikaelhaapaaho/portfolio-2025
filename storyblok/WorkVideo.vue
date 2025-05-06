@@ -21,7 +21,6 @@
         ref="iframe"
         class="position-absolute start-0 top-0 h-100 w-100"
         :src="`${blok.link}&background=1&dnt=1&api=1`"
-        allow="autoplay"
         @load="handleIframeLoad"
       ></iframe>
     </div>
