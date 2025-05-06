@@ -3,11 +3,8 @@
     <h3 class="display-1 text-primary mb-4 overflow-hidden">
       <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
-    <div
-      class="row row-cols-1 row-cols-lg-2 align-items-center text-primary"
-      ref="cols"
-    >
-      <div class="col mb-5 mb-lg-0">
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center text-primary">
+      <div class="col mb-5 mb-lg-0" ref="info">
         <div class="bg-light">
           <div class="row m-0 row-cols-3">
             <div
@@ -51,7 +48,7 @@ import { Application } from "@splinetool/runtime"
 
 const canvas = ref(null)
 const h3 = ref(null)
-const cols = ref(null)
+const info = ref(null)
 const { slideIn, scaleIn } = useAnimations()
 
 const state = reactive({
@@ -69,7 +66,7 @@ onMounted(async () => {
   state.spline.isLoaded = true
 
   slideIn(h3.value)
-  scaleIn(cols.value)
+  scaleIn(info.value)
 })
 
 const age = Math.floor(
