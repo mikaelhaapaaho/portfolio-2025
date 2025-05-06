@@ -10,10 +10,12 @@ const resolveRelations = ["popular-articles.articles"]
 
 const url = slug && slug.length > 0 ? slug.join("/") : "home"
 
+const version = import.meta.env.STORYBLOK_VERSION || "draft"
+
 const story = await useAsyncStoryblok(
   url.replace(/\/$/, ""),
   {
-    version: "draft",
+    version,
     language: locale.value,
     resolve_relations: resolveRelations,
   },
