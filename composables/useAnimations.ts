@@ -5,8 +5,8 @@ export const useAnimations = () => {
     gsap.from(element, {
       duration: 1,
       x: 100,
-      opacity: 0,
-      ease: "back.out",
+      autoAlpha: 0,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: element,
         start: "top 90%",
@@ -22,7 +22,7 @@ export const useAnimations = () => {
       gsap.from(child, {
         duration: 1,
         scale: 0,
-        ease: "back(1).out",
+        ease: "power2.out",
         delay: index * 0.1,
         scrollTrigger: {
           trigger: child,

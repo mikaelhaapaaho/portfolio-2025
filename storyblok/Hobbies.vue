@@ -1,10 +1,8 @@
 <template>
   <section id="hobbies" class="container pt-5 mb-5 pb-4">
-    <div ref="h3">
-      <h3 class="display-1 text-primary mb-4">
-        <span class="text-danger">/</span>{{ blok.heading }}
-      </h3>
-    </div>
+    <h3 class="display-1 text-primary mb-4 overflow-hidden">
+      <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
+    </h3>
     <div ref="masonryRow" class="row" data-masonry='{"percentPosition": true }'>
       <div
         v-for="blok in blok.images"
