@@ -11,7 +11,10 @@
       ref="hint"
       v-if="blok.hint"
     >
-      <i class="position-absolute bi bi-hand-index-thumb-fill text-light"></i>
+      <i
+        class="position-absolute bi bi-hand-index-thumb-fill text-light"
+        style="transform: scale(0.95) translateY(2%)"
+      ></i>
       <i class="position-absolute bi bi-hand-index-thumb text-danger"></i>
     </span>
   </section>
@@ -49,10 +52,6 @@ const removeHint = () => {
 span {
   pointer-events: none;
   animation: scaleAnimation 2s infinite ease-in-out;
-}
-
-.text-light {
-  transform: scale(0.95) translateY(2%);
 }
 
 @keyframes scaleAnimation {
