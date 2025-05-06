@@ -1,5 +1,5 @@
 <template>
-  <section id="hobbies" class="container pt-5 mb-5 pb-4">
+  <section id="hobbies" class="container pt-5 pb-4 mb-5">
     <h3 class="display-1 text-primary mb-4 overflow-hidden">
       <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
