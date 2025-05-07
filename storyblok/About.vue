@@ -3,10 +3,7 @@
     <h3 class="display-1 text-primary overflow-hidden mb-4 lh-base">
       <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
-    <div
-      ref="cols"
-      class="row row-cols-1 row-cols-lg-2 align-items-center text-primary"
-    >
+    <div ref="cols" class="row row-cols-1 row-cols-lg-2 text-primary">
       <div class="col mb-5 mb-lg-0">
         <div class="bg-light">
           <div class="row m-0 row-cols-3">
