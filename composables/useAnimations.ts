@@ -9,8 +9,8 @@ export const useAnimations = () => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: element,
-        start: "top 90%",
-        toggleActions: "play none none",
+        start: "bottom bottom",
+        toggleActions: "play none none none",
       },
     })
   }
@@ -22,7 +22,7 @@ export const useAnimations = () => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: element,
-        start: "top 90%",
+        start: "bottom bottom",
         toggleActions: "play none none none",
       },
     })
@@ -39,7 +39,7 @@ export const useAnimations = () => {
         delay: index * 0.1,
         scrollTrigger: {
           trigger: child,
-          start: "top 90%",
+          start: "bottom bottom",
           toggleActions: "play none none none",
         },
       })
