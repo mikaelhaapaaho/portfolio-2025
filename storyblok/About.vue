@@ -52,7 +52,7 @@ import { Application } from "@splinetool/runtime"
 const canvas = ref(null)
 const h3 = ref(null)
 const cols = ref(null)
-const { slideIn, scaleIn } = useAnimations()
+const { slideIn, scaleInMultiple } = useAnimations()
 
 const state = reactive({
   spline: {
@@ -69,7 +69,7 @@ onMounted(async () => {
   state.spline.isLoaded = true
 
   slideIn(h3.value)
-  scaleIn(cols.value)
+  scaleInMultiple(cols.value)
 })
 
 const age = Math.floor(

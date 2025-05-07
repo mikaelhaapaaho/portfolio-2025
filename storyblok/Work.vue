@@ -30,11 +30,11 @@ const activeWork = ref(null)
 
 const h3 = ref(null)
 const cards = ref(null)
-const { slideIn, scaleIn } = useAnimations()
+const { slideIn, scaleInMultiple } = useAnimations()
 
 onMounted(() => {
   slideIn(h3.value)
-  scaleIn(cards.value)
+  scaleInMultiple(cards.value)
 })
 </script>
 

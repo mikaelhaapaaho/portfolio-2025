@@ -60,7 +60,7 @@
 const props = defineProps({ blok: Object })
 const h3 = ref(null)
 const masonryRow = ref(null)
-const { slideIn, scaleIn } = useAnimations()
+const { slideIn, scaleInMultiple } = useAnimations()
 const { $bootstrap } = useNuxtApp()
 const activeImage = ref(null)
 
@@ -79,7 +79,7 @@ const closeModal = () => {
 
 onMounted(async () => {
   slideIn(h3.value)
-  scaleIn(masonryRow.value)
+  scaleInMultiple(masonryRow.value)
 
   // Import and initialize Masonry
   const Masonry = (await import("masonry-layout")).default

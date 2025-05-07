@@ -18,11 +18,11 @@
 const props = defineProps({ blok: Object })
 const h3 = ref(null)
 const skillsContainer = ref(null)
-const { slideIn, scaleIn } = useAnimations()
+const { slideIn, scaleInMultiple } = useAnimations()
 
 onMounted(() => {
   slideIn(h3.value)
-  scaleIn(skillsContainer.value)
+  scaleInMultiple(skillsContainer.value)
 })
 </script>
 

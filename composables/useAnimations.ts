@@ -15,7 +15,20 @@ export const useAnimations = () => {
     })
   }
 
-  const scaleIn = (container: HTMLElement) => {
+  const scaleIn = (element: HTMLElement) => {
+    gsap.from(element, {
+      duration: 0.5,
+      scale: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    })
+  }
+
+  const scaleInMultiple = (container: HTMLElement) => {
     const children = Array.from(container.children)
 
     children.forEach((child, index) => {
@@ -36,5 +49,6 @@ export const useAnimations = () => {
   return {
     slideIn,
     scaleIn,
+    scaleInMultiple,
   }
 }

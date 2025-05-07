@@ -22,11 +22,11 @@
 <script setup>
 const props = defineProps({ blok: Object })
 const logosContainer = ref(null)
-const { scaleIn } = useAnimations()
+const { scaleInMultiple } = useAnimations()
 
 onMounted(() => {
   if (logosContainer.value) {
-    scaleIn(logosContainer.value)
+    scaleInMultiple(logosContainer.value)
   }
 })
 </script>
