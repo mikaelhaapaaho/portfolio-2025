@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="container pt-5 pb-4 mb-5">
-    <h3 class="display-1 text-primary mb-4 overflow-hidden">
+    <h3 class="display-1 text-primary overflow-hidden lh-base">
       <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
     <div
