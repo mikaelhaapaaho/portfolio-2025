@@ -24,6 +24,7 @@
 const props = defineProps({ blok: Object })
 
 import { Application } from "@splinetool/runtime"
+const { controlSplineVisibility } = useAnimations()
 
 const canvas = ref(null)
 const state = reactive({
@@ -39,6 +40,8 @@ onMounted(async () => {
   await app.load(state.spline.scene)
   state.spline.app = app
   state.spline.isLoaded = true
+
+  controlSplineVisibility(canvas.value)
 })
 
 const hint = ref(null)

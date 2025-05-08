@@ -46,9 +46,26 @@ export const useAnimations = () => {
     })
   }
 
+  const controlSplineVisibility = (canvas: HTMLElement) => {
+    gsap.to(canvas, {
+      scrollTrigger: {
+        trigger: canvas,
+        start: "top bottom",
+        end: "bottom top",
+        onLeave: () => {
+          canvas.style.display = "none"
+        },
+        onEnterBack: () => {
+          canvas.style.display = "block"
+        },
+      },
+    })
+  }
+
   return {
     slideIn,
     scaleIn,
     scaleInMultiple,
+    controlSplineVisibility,
   }
 }
