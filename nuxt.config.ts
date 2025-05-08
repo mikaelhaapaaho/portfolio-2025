@@ -23,14 +23,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Mikael Haapa-aho",
-      meta: [
-        {
-          name: "description",
-          content:
-            "Graphic designer and a front-end developer. Take a look at some of my works.",
-        },
-      ],
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com" },
