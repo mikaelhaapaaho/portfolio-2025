@@ -8,12 +8,23 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: false },
   runtimeConfig: {
+    storyblok: {
+      accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+    },
     public: {
       storyblokVersion: process.env.STORYBLOK_VERSION || "draft",
     },
   },
   modules: [
-    ["@storyblok/nuxt", { accessToken: process.env.STORYBLOK_ACCESS_TOKEN }],
+    [
+      "@storyblok/nuxt",
+      {
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+        apiOptions: {
+          region: "eu",
+        },
+      },
+    ],
     "@nuxtjs/i18n",
   ],
   i18n: {
