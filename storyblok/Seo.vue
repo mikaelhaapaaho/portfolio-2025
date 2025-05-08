@@ -78,18 +78,28 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
+        "@id": url.href,
         name: props.blok.title,
         description: props.blok.description,
         url: url.href,
-        image: props.blok.image.filename,
+        image: {
+          "@type": "ImageObject",
+          url: props.blok.image.filename,
+        },
         inLanguage: locale.value,
         publisher: {
           "@type": "Organization",
+          "@id": `${url.origin}/#organization`,
           name: props.blok.title,
           logo: {
             "@type": "ImageObject",
             url: props.blok.image.filename,
           },
+        },
+        mainEntity: {
+          "@type": "WebPage",
+          name: props.blok.title,
+          description: props.blok.description,
         },
       }),
     },
