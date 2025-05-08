@@ -5,7 +5,7 @@
       class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-primary z-3"
     >
       <div class="text-center">
-        <div class="text-light mb-5">Mikael&nbsp;Haapa&#8209;aho</div>
+        <div class="text-light fs-1 mb-5">Mikael&nbsp;Haapa&#8209;aho</div>
         <div
           class="spinner-border text-light"
           role="status"
