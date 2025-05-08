@@ -4,7 +4,7 @@
     :to="blok.link"
     target="_blank"
   >
-    <i :class="blok.icon" class="bi d-block fs-2 lh-1 p-2"></i>
+    <i :class="blok.icon" class="bi d-block fs-1 lh-1 p-2"></i>
   </NuxtLink>
 </template>
 
