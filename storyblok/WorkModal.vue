@@ -22,12 +22,12 @@
               :alt="activeWork.image.alt"
               loading="lazy"
             />
-            <h1
+            <h2
               v-if="activeWork"
               class="modal-title text-primary display-3 fw-bold lh-sm my-4"
             >
               {{ activeWork.heading }}
-            </h1>
+            </h2>
             <div v-if="activeWork" class="row">
               <StoryblokComponent
                 v-for="blok in activeWork.sections"
