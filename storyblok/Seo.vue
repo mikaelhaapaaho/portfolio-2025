@@ -72,5 +72,27 @@ useHead({
       href: url.href,
     },
   ],
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: props.blok.title,
+        description: props.blok.description,
+        url: url.href,
+        image: props.blok.image.filename,
+        inLanguage: locale.value,
+        publisher: {
+          "@type": "Organization",
+          name: props.blok.title,
+          logo: {
+            "@type": "ImageObject",
+            url: props.blok.image.filename,
+          },
+        },
+      }),
+    },
+  ],
 })
 </script>
