@@ -2,9 +2,11 @@
 
 <script setup>
 import { useI18n } from "vue-i18n"
+import { useRequestURL } from "#app"
 
 const { locale } = useI18n()
 const props = defineProps({ blok: Object })
+const url = useRequestURL()
 
 useHead({
   title: props.blok.title,
@@ -43,7 +45,7 @@ useHead({
     },
     {
       property: "og:url",
-      content: window.location.href,
+      content: url.href,
     },
     {
       property: "og:site_name",
@@ -67,7 +69,7 @@ useHead({
     },
     {
       rel: "canonical",
-      href: window.location.href,
+      href: url.href,
     },
   ],
 })
