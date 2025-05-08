@@ -8,7 +8,7 @@
       <img
         :src="blok.image.filename"
         class="card-img-top rounded-0 border border-3 border-primary border-bottom-0"
-        alt="..."
+        :alt="blok.image.alt"
         loading="lazy"
       />
       <div class="card-body border border-3 border-primary">
