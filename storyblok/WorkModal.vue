@@ -19,7 +19,7 @@
               v-if="activeWork"
               :src="activeWork.image.filename"
               class="img-fluid"
-              alt="..."
+              :alt="activeWork.image.alt"
               loading="lazy"
             />
             <h1
