@@ -17,7 +17,6 @@
         </div>
       </div>
       <iframe
-        v-if="isLoaded"
         ref="iframe"
         class="position-absolute start-0 top-0 h-100 w-100"
         :src="`${blok.link}&background=1&dnt=1&api=1`"
@@ -29,50 +28,21 @@
 
 <script setup>
 const props = defineProps({ blok: Object })
-const isLoaded = ref(false)
-const videoContainer = ref(null)
 const iframe = ref(null)
 
 const loadVimeoAPI = () => {
-  if (window.Vimeo) return Promise.resolve(window.Vimeo)
+  if (window.Vimeo) return
 
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script")
-    script.src = "https://player.vimeo.com/api/player.js"
-    script.onload = () => resolve(window.Vimeo)
-    script.onerror = reject
-    document.head.appendChild(script)
-  })
+  const script = document.createElement("script")
+  script.src = "https://player.vimeo.com/api/player.js"
+  document.head.appendChild(script)
 }
 
-const handleIframeLoad = async () => {
-  try {
-    await loadVimeoAPI()
+const handleIframeLoad = () => {
+  if (window.Vimeo && iframe.value) {
     new window.Vimeo.Player(iframe.value)
-  } catch (error) {
-    console.error("Error loading Vimeo player:", error)
-  } finally {
-    isLoaded.value = true
   }
 }
 
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        isLoaded.value = true
-        observer.disconnect()
-      }
-    },
-    {
-      root: null,
-      rootMargin: "100px",
-      threshold: 0.01,
-    }
-  )
-
-  if (videoContainer.value) {
-    observer.observe(videoContainer.value)
-  }
-})
+onMounted(loadVimeoAPI)
 </script>
