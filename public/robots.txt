@@ -1,6 +1,6 @@
-# Allow all crawlers
+# Disallow all crawlers
 User-agent: *
-Allow: /
+Disallow: /
 
 # Disallow admin and private routes
 Disallow: /api/
