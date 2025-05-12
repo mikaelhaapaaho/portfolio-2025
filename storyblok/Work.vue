@@ -1,9 +1,9 @@
 <template>
   <section id="work" class="container pt-5 pb-4 mb-5">
     <h3 class="display-1 text-primary mb-4 overflow-hidden lh-base">
-      <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
+      <div><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
-    <div ref="cards" class="row row-cols-1 row-cols-md-2">
+    <div class="row row-cols-1 row-cols-md-2">
       <StoryblokComponent
         v-for="blok in blok.links"
         :key="blok._uid"
@@ -27,15 +27,6 @@
 <script setup>
 const props = defineProps({ blok: Object })
 const activeWork = ref(null)
-
-const h3 = ref(null)
-const cards = ref(null)
-const { slideIn, scaleInMultiple } = useAnimations()
-
-onMounted(() => {
-  slideIn(h3.value)
-  scaleInMultiple(cards.value)
-})
 </script>
 
 <style scoped>

@@ -1,7 +1,7 @@
 <template>
   <section id="hobbies" class="container pt-5 pb-4 mb-5">
     <h3 class="display-1 text-primary overflow-hidden lh-base">
-      <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
+      <div><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
     <div ref="masonryRow" class="row" data-masonry='{"percentPosition": true }'>
       <div
@@ -58,9 +58,7 @@
 
 <script setup>
 const props = defineProps({ blok: Object })
-const h3 = ref(null)
 const masonryRow = ref(null)
-const { slideIn, scaleInMultiple } = useAnimations()
 const { $bootstrap } = useNuxtApp()
 const activeImage = ref(null)
 
@@ -78,9 +76,6 @@ const closeModal = () => {
 }
 
 onMounted(async () => {
-  slideIn(h3.value)
-  scaleInMultiple(masonryRow.value)
-
   // Import and initialize Masonry
   const Masonry = (await import("masonry-layout")).default
 

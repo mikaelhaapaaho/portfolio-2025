@@ -1,6 +1,6 @@
 <template>
   <section id="introduction" class="container pb-4 mb-5">
-    <div ref="section">
+    <div>
       <i class="bi bi-quote display-1 text-danger"></i>
       <div class="border border-primary border-3 p-4">
         <h2 class="my-4" style="white-space: pre-line">
@@ -15,15 +15,7 @@
 </template>
 
 <script setup>
-import { useAnimations } from "@/composables/useAnimations"
-
 const props = defineProps({ blok: Object })
-const section = ref(null)
-const { scaleIn } = useAnimations()
-
-onMounted(async () => {
-  scaleIn(section.value)
-})
 </script>
 
 <style scoped>

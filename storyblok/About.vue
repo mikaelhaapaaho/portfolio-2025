@@ -1,9 +1,9 @@
 <template>
   <section id="about" class="container pt-5 pb-4 mb-5">
     <h3 class="display-1 text-primary overflow-hidden mb-4 lh-base">
-      <div ref="h3"><span class="text-danger">/</span>{{ blok.heading }}</div>
+      <div><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
-    <div ref="cols" class="row row-cols-1 row-cols-lg-2 text-primary">
+    <div class="row row-cols-1 row-cols-lg-2 text-primary">
       <div class="col mb-5 mb-lg-0">
         <div class="bg-light">
           <div class="row m-0 row-cols-3">
@@ -47,9 +47,6 @@ const text = renderRichText(props.blok.text)
 import { Application } from "@splinetool/runtime"
 
 const canvas = ref(null)
-const h3 = ref(null)
-const cols = ref(null)
-const { slideIn, scaleInMultiple } = useAnimations()
 
 const state = reactive({
   spline: {
@@ -64,9 +61,6 @@ onMounted(async () => {
   await app.load(state.spline.scene)
   state.spline.app = app
   state.spline.isLoaded = true
-
-  slideIn(h3.value)
-  scaleInMultiple(cols.value)
 })
 
 const age = Math.floor(

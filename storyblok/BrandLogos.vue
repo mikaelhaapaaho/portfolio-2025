@@ -1,7 +1,7 @@
 <template>
   <section id="brands" class="container-fluid bg-primary py-5">
     <div class="container">
-      <div class="row row-cols-3 row-cols-lg-6" ref="logosContainer">
+      <div class="row row-cols-3 row-cols-lg-6">
         <div
           v-for="(logo, index) in blok.logos"
           class="col p-4 p-sm-5 d-flex align-items-center"
@@ -21,14 +21,6 @@
 
 <script setup>
 const props = defineProps({ blok: Object })
-const logosContainer = ref(null)
-const { scaleInMultiple } = useAnimations()
-
-onMounted(() => {
-  if (logosContainer.value) {
-    scaleInMultiple(logosContainer.value)
-  }
-})
 </script>
 
 <style scoped>
