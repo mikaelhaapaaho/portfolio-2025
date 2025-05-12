@@ -72,3 +72,14 @@ onUnmounted(() => {
   }
 })
 </script>
+
+<style scoped>
+button {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left bottom;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+</style>

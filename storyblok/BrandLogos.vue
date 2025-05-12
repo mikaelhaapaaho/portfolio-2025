@@ -27,5 +27,10 @@ const props = defineProps({ blok: Object })
 img {
   filter: brightness(0) saturate(100%) invert(90%) sepia(13%) saturate(466%)
     hue-rotate(340deg) brightness(108%) contrast(98%);
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.2);
 }
 </style>
