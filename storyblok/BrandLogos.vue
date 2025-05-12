@@ -24,13 +24,16 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-img {
-  filter: brightness(0) saturate(100%) invert(90%) sepia(13%) saturate(466%)
-    hue-rotate(340deg) brightness(108%) contrast(98%);
+.col {
   transition: transform 0.3s ease-in-out;
 }
 
-img:hover {
+.col:hover {
   transform: scale(1.2);
+}
+
+img {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(13%) saturate(466%)
+    hue-rotate(340deg) brightness(108%) contrast(98%);
 }
 </style>
