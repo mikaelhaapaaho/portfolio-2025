@@ -1,8 +1,18 @@
 <template>
   <section id="hobbies" class="container pt-5 pb-4 mb-5">
-    <h3 class="display-1 text-primary overflow-hidden lh-base">
+    <h3 class="display-1 text-primary overflow-hidden lh-base mb-4">
       <div><span class="text-danger">/</span>{{ blok.heading }}</div>
     </h3>
+    <iframe
+      class="border border-primary border-3"
+      style="background: linear-gradient(to bottom, #1f1f1f 50%, #121212 50%)"
+      src="https://open.spotify.com/embed/artist/6lpoIaNaKJoYix2dvm8tQU?utm_source=generator&theme=0"
+      width="100%"
+      height="470"
+      frameBorder="0"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
     <div ref="masonryRow" class="row" data-masonry='{"percentPosition": true }'>
       <div
         v-for="blok in blok.images"
@@ -97,13 +107,5 @@ h3 {
 
 h3:hover {
   transform: translateX(10px);
-}
-
-.border {
-  transition: transform 0.3s ease-in-out;
-}
-
-.border:hover {
-  transform: scale(1.05);
 }
 </style>
