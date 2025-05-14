@@ -12,6 +12,23 @@ const url = useRequestURL()
 // Get current date for freshness signals
 const currentDate = new Date().toISOString()
 
+// Process tags - handling both array and string formats
+let keywords = ""
+let tagsArray = []
+
+if (props.blok.tags) {
+  // If tags is already an array, use it directly
+  if (Array.isArray(props.blok.tags)) {
+    tagsArray = props.blok.tags
+    keywords = props.blok.tags.join(", ")
+  }
+  // If tags is a string (comma-separated), convert to array
+  else if (typeof props.blok.tags === "string") {
+    tagsArray = props.blok.tags.split(",").map((tag) => tag.trim())
+    keywords = props.blok.tags
+  }
+}
+
 useHead({
   title: props.blok.title,
   meta: [
@@ -31,6 +48,15 @@ useHead({
       name: "language",
       content: locale.value,
     },
+    // Add keywords meta tag if we have any
+    ...(keywords
+      ? [
+          {
+            name: "keywords",
+            content: keywords,
+          },
+        ]
+      : []),
     {
       property: "og:title",
       content: props.blok.title,
@@ -98,6 +124,7 @@ useHead({
         },
         inLanguage: locale.value,
         dateModified: currentDate,
+        keywords: tagsArray,
         publisher: {
           "@type": "Organization",
           "@id": `${url.origin}/#organization`,
