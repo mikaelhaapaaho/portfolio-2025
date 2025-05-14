@@ -3,10 +3,14 @@
 <script setup>
 import { useI18n } from "vue-i18n"
 import { useRequestURL } from "#app"
+import { useRequestEvent } from "#app"
 
 const { locale } = useI18n()
 const props = defineProps({ blok: Object })
 const url = useRequestURL()
+
+// Get current date for freshness signals
+const currentDate = new Date().toISOString()
 
 useHead({
   title: props.blok.title,
@@ -52,6 +56,10 @@ useHead({
       content: props.blok.title,
     },
     {
+      property: "og:updated_time",
+      content: currentDate,
+    },
+    {
       name: "twitter:card",
       content: "summary_large_image",
     },
@@ -67,6 +75,8 @@ useHead({
       name: "twitter:image",
       content: props.blok.image.filename,
     },
+  ],
+  link: [
     {
       rel: "canonical",
       href: url.href,
@@ -87,6 +97,7 @@ useHead({
           url: props.blok.image.filename,
         },
         inLanguage: locale.value,
+        dateModified: currentDate,
         publisher: {
           "@type": "Organization",
           "@id": `${url.origin}/#organization`,
@@ -105,4 +116,16 @@ useHead({
     },
   ],
 })
+
+// Add Last-Modified header via middleware
+// Note: This will only work in server-side rendering
+if (process.server) {
+  const event = useRequestEvent()
+  if (event) {
+    event.node.res.setHeader(
+      "Last-Modified",
+      new Date(currentDate).toUTCString()
+    )
+  }
+}
 </script>
