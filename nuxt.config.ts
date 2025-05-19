@@ -42,6 +42,13 @@ export default defineNuxtConfig({
           href: "/apple-touch-icon.png",
         },
       ],
+      script: [
+        {
+          defer: true,
+          src: "https://static.cloudflareinsights.com/beacon.min.js",
+          "data-cf-beacon": '{"token": "b350901c979445b5b3ce9085f80cbfb5"}',
+        },
+      ],
     },
   },
   css: [
