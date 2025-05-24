@@ -17,7 +17,7 @@
       <div
         v-for="blok in blok.images"
         :key="blok._uid"
-        class="col-6 col-md-4 g-4 masonry-item"
+        class="col-6 col-md-4 col-lg-3 g-4 masonry-item"
       >
         <StoryblokComponent :blok="blok" @imageClick="openModal" />
       </div>
